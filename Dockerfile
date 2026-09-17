@@ -1,8 +1,8 @@
 FROM php:8.2-fpm
 
-# تثبيت الأدوات والحزم المطلوبة لـ Laravel و PostgreSQL
+# تثبيت الأدوات والحزم المطلوبة مع Node.js و npm
 RUN apt-get update && apt-get install -y \
-    git unzip libpng-dev libonig-dev libxml2-dev libpq-dev \
+    git unzip libpng-dev libonig-dev libxml2-dev libpq-dev nodejs npm \
     && docker-php-ext-install pdo pdo_pgsql pgsql gd
 
 # تثبيت Composer
